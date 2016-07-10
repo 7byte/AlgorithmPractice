@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "旋转字符串", "旋转字符串\旋转字符串.vcxproj", "{389BB942-AD3C-4235-8166-C1DDDD3C5691}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "链表相交", "链表相交\链表相交.vcxproj", "{962E672B-4975-48F4-B236-112E589F860B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3SumClosest", "3SumClosest\3SumClosest.vcxproj", "{4417E451-E971-4231-B6F9-B7C8F6C53287}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "通配符匹配", "通配符匹配\通配符匹配.vcxproj", "{B86462C2-0D93-4F0A-9AFD-5D0806304F56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,14 @@ Global
 		{4417E451-E971-4231-B6F9-B7C8F6C53287}.Release|x64.Build.0 = Release|x64
 		{4417E451-E971-4231-B6F9-B7C8F6C53287}.Release|x86.ActiveCfg = Release|Win32
 		{4417E451-E971-4231-B6F9-B7C8F6C53287}.Release|x86.Build.0 = Release|Win32
+		{B86462C2-0D93-4F0A-9AFD-5D0806304F56}.Debug|x64.ActiveCfg = Debug|x64
+		{B86462C2-0D93-4F0A-9AFD-5D0806304F56}.Debug|x64.Build.0 = Debug|x64
+		{B86462C2-0D93-4F0A-9AFD-5D0806304F56}.Debug|x86.ActiveCfg = Debug|Win32
+		{B86462C2-0D93-4F0A-9AFD-5D0806304F56}.Debug|x86.Build.0 = Debug|Win32
+		{B86462C2-0D93-4F0A-9AFD-5D0806304F56}.Release|x64.ActiveCfg = Release|x64
+		{B86462C2-0D93-4F0A-9AFD-5D0806304F56}.Release|x64.Build.0 = Release|x64
+		{B86462C2-0D93-4F0A-9AFD-5D0806304F56}.Release|x86.ActiveCfg = Release|Win32
+		{B86462C2-0D93-4F0A-9AFD-5D0806304F56}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
