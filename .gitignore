@@ -251,3 +251,5 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+*.suo
+.vs/算法练习/v14/.suo
