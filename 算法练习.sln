@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3SumClosest", "3SumClosest\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "通配符匹配", "通配符匹配\通配符匹配.vcxproj", "{B86462C2-0D93-4F0A-9AFD-5D0806304F56}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "红黑树", "红黑树\红黑树.vcxproj", "{C4A90425-9DDF-4972-A15C-634F37DC436B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{B86462C2-0D93-4F0A-9AFD-5D0806304F56}.Release|x64.Build.0 = Release|x64
 		{B86462C2-0D93-4F0A-9AFD-5D0806304F56}.Release|x86.ActiveCfg = Release|Win32
 		{B86462C2-0D93-4F0A-9AFD-5D0806304F56}.Release|x86.Build.0 = Release|Win32
+		{C4A90425-9DDF-4972-A15C-634F37DC436B}.Debug|x64.ActiveCfg = Debug|x64
+		{C4A90425-9DDF-4972-A15C-634F37DC436B}.Debug|x64.Build.0 = Debug|x64
+		{C4A90425-9DDF-4972-A15C-634F37DC436B}.Debug|x86.ActiveCfg = Debug|Win32
+		{C4A90425-9DDF-4972-A15C-634F37DC436B}.Debug|x86.Build.0 = Debug|Win32
+		{C4A90425-9DDF-4972-A15C-634F37DC436B}.Release|x64.ActiveCfg = Release|x64
+		{C4A90425-9DDF-4972-A15C-634F37DC436B}.Release|x64.Build.0 = Release|x64
+		{C4A90425-9DDF-4972-A15C-634F37DC436B}.Release|x86.ActiveCfg = Release|Win32
+		{C4A90425-9DDF-4972-A15C-634F37DC436B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
