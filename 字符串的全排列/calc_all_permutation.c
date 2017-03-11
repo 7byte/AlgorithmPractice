@@ -33,7 +33,7 @@ void calc_all_permutation(char* s, int from, int to)
 
 int main()
 {
-	char s[] = "abc";
+	char s[] = "abcd";
 	calc_all_permutation(s, 0, strlen(s) - 1);
 	return 0;
 }
