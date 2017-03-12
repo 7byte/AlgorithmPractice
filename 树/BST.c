@@ -1,56 +1,6 @@
 #include <stdio.h>
 #include <malloc.h>
-
-typedef int (*compare)(void*, void*);
-typedef void (*print)(void*);
-
-int intCompare(void *a, void *b)
-{
-	int x = *(int*)a, y = *(int*)b;
-	if (x == y)
-	{
-		return 0;
-	}
-	else if (x < y)
-	{
-		return -1;
-	}
-	else
-	{
-		return 1;
-	}
-}
-
-void intPrint(void *a)
-{
-	int x = *(int*)a;
-	printf("%d\n", x);
-}
-
-typedef struct nodeTag node;
-typedef struct binarySearchTree BST;
-
-struct nodeTag
-{
-	node *parent;
-	node *left;
-	node *right;
-	void *data;
-};
-
-struct binarySearchTree
-{
-	node *root;
-	compare cmp;
-	print prt;
-};
-
-int insert(BST *tree, void *val);
-int del(BST *tree, void *val);
-node* find(BST *tree, node *root, void *val);
-int inOrder(BST *tree, node *nd, int sp);
-int preOrder(BST *tree, node *nd, int sp);
-int postOrder(BST *tree, node *nd, int sp);
+#include "BST.h"
 
 int insert(BST *tree, void *val)
 {
@@ -151,7 +101,7 @@ int inOrder(BST *tree, node *nd, int sp)
 	inOrder(tree, nd->left, sp + 1);
 	for (i ; i < sp; i++)
 	{
-		printf("--");
+		printf("----");
 	}
 	
 	(*tree->prt)(nd->data);
@@ -168,12 +118,12 @@ int preOrder(BST *tree, node *nd, int sp)
 	}
 	for (i; i < sp; i++)
 	{
-		printf("--");
+		printf("----");
 	}
 
 	(*tree->prt)(nd->data);
-	inOrder(tree, nd->left, sp + 1);
-	inOrder(tree, nd->right, sp + 1);
+	preOrder(tree, nd->left, sp + 1);
+	preOrder(tree, nd->right, sp + 1);
 	return 0;
 }
 
@@ -184,38 +134,13 @@ int postOrder(BST *tree, node *nd, int sp)
 	{
 		return -1;
 	}
-	inOrder(tree, nd->left, sp + 1);
-	inOrder(tree, nd->right, sp + 1);
+	postOrder(tree, nd->left, sp + 1);
+	postOrder(tree, nd->right, sp + 1);
 	for (i; i < sp; i++)
 	{
-		printf("--");
+		printf("----");
 	}
 
 	(*tree->prt)(nd->data);
-	return 0;
-}
-
-void testIntTree()
-{
-	int a[10] = { 14,72,12,57,87,987,1,7,48,347 };
-	int i = 0;
-	BST *tree = NULL;
-
-	tree = (BST *)calloc(1, sizeof(BST));
-	tree->cmp = intCompare;
-	tree->prt = intPrint;
-
-	for (i = 0; i < 10; i++)
-	{
-		insert(tree, (a + i));
-	}
-	inOrder(tree, tree->root, 0);
-
-	return;
-}
-
-int main()
-{
-	testIntTree();
 	return 0;
 }
