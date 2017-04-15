@@ -14,7 +14,7 @@ struct binarySearchTree
 
 int insert(BST *tree, void *val);
 int del(BST *tree, void *val);
-node* find(BST *tree, node *root, void *val);
-int inOrder(BST *tree, node *nd, int sp);
-int preOrder(BST *tree, node *nd, int sp);
-int postOrder(BST *tree, node *nd, int sp);
+node* find(BST *tree, void *val);
+int inOrder(BST *tree, node *nd);
+int preOrder(BST *tree, node *nd);
+int postOrder(BST *tree, node *nd);
