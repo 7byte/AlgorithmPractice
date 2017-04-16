@@ -26,9 +26,6 @@
     <ClInclude Include="tree.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="binary_tree.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="AVL.h">
       <Filter>头文件</Filter>
     </ClInclude>

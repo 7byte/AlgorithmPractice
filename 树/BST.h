@@ -1,9 +1,17 @@
 #pragma once
 
 #include "tree.h"
-#include "binary_tree.h"
 
 typedef struct binarySearchTree BST;
+typedef struct nodeTag node;
+
+struct nodeTag
+{
+	node *parent;
+	node *left;
+	node *right;
+	void *data;
+};
 
 struct binarySearchTree
 {
