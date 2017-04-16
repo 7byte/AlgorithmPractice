@@ -7,17 +7,17 @@ typedef struct nodeTag node;
 
 struct nodeTag
 {
-	node *parent;
-	node *left;
-	node *right;
-	void *data;
+	node *parent;	//父节点
+	node *left;		//左儿子
+	node *right;	//右儿子
+	void *data;		//数据域
 };
 
 struct binarySearchTree
 {
-	node *root;
-	compare cmp;
-	print prt;
+	node *root;		//根节点
+	compare cmp;	//比较函数
+	print prt;		//打印函数
 };
 
 int insert(BST *tree, void *val);
