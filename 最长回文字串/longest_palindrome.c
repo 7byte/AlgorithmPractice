@@ -1,6 +1,7 @@
 /*给定一个字符串，求它的最长回文子串的长度。*/
 
 #include <stdio.h>
+#include <string.h>
 
 int LongestPalindrome(const char *s, int n)
 {

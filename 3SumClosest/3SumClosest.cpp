@@ -14,7 +14,7 @@ int cmp(const void* a, const void* b)
 }
 
 int threeSumClosest(int* nums, int numsSize, int target) {
-	int sum = 0, tmp_sum = 0;
+	int sum = 0, tmpSum = 0;
 
 	qsort(nums, numsSize, sizeof(nums[0]), cmp);
 	sum = nums[0] + nums[1] + nums[2];
@@ -28,13 +28,13 @@ int threeSumClosest(int* nums, int numsSize, int target) {
 		int k = numsSize - 1;
 		while (j < k)
 		{
-			tmp_sum = nums[i] + nums[j] + nums[k];
-			if (abs(target - sum) > abs(target - tmp_sum))
+			tmpSum = nums[i] + nums[j] + nums[k];
+			if (abs(target - sum) > abs(target - tmpSum))
 			{
-				sum = tmp_sum;
+				sum = tmpSum;
 				if (sum == target) return sum;
 			}
-			tmp_sum > target ? k-- : j++;
+			tmpSum > target ? k-- : j++;
 		}
 	}
 	return sum;

@@ -3,6 +3,7 @@
 // abc、acb、bac、bca、cab 和 cba。
 
 #include <stdio.h>
+#include <string.h>
 
 void calc_all_permutation(char* s, int from, int to)
 {

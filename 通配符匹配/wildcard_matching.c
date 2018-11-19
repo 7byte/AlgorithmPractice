@@ -21,7 +21,7 @@
 #include<memory.h>
 #include<stdbool.h>
 
-bool isMatch(char* s, char* p)
+bool isMatch(const char* s, const char* p)
 {
 	const char* star = NULL;
 	const char* ss = s;

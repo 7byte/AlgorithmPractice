@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
@@ -165,7 +166,7 @@ int main()
 	char str[20] = { 0 };
 	strcpy(str, "I am a student.");
 	reverse_words(str, strlen(str));
-	printf(str);
+	cout << str << endl;
 
 	return 0;
 }

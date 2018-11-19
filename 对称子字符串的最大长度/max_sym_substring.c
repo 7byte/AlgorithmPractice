@@ -3,6 +3,7 @@
 //提示：可能很多人都写过判断一个字符串是不是对称的函数，这个题目可以看成是该函数的加强版。
 
 #include <stdio.h>
+#include <string.h>
 
 int max_sym_substring(char *s, int num)
 {

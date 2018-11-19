@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <malloc.h>
+#include <memory.h>
 #include "BST.h"
 
 int intCompare(void *a, void *b)
