@@ -1,4 +1,4 @@
-/*在一个字符串中找到第一个只出现一次的字符。如输入 abaccdeff，则输出 b*/
+/*鍦ㄤ竴涓瓧绗︿覆涓壘鍒扮涓�涓彧鍑虹幇涓�娆＄殑瀛楃銆傚杈撳叆 abaccdeff锛屽垯杈撳嚭 b*/
 
 #include <stdio.h>
 

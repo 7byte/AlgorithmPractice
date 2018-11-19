@@ -7,17 +7,17 @@ typedef struct nodeTag node;
 
 struct nodeTag
 {
-	node *parent;	//¸¸½Úµã
-	node *left;		//×ó¶ù×Ó
-	node *right;	//ÓÒ¶ù×Ó
-	void *data;		//Êı¾İÓò
+	node *parent;	//çˆ¶èŠ‚ç‚¹
+	node *left;		//å·¦å„¿å­
+	node *right;	//å³å„¿å­
+	void *data;		//æ•°æ®åŸŸ
 };
 
 struct binarySearchTree
 {
-	node *root;		//¸ù½Úµã
-	compare cmp;	//±È½Ïº¯Êı
-	print prt;		//´òÓ¡º¯Êı
+	node *root;		//æ ¹èŠ‚ç‚¹
+	compare cmp;	//æ¯”è¾ƒå‡½æ•°
+	print prt;		//æ‰“å°å‡½æ•°
 };
 
 int insert(BST *tree, void *val);

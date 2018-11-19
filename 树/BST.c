@@ -2,12 +2,12 @@
 #include <malloc.h>
 #include "BST.h"
 
-//¶ş²æ²éÕÒÊ÷£¨Ó¢Óï£ºBinary Search Tree£©£¬Ò²³Æ¶ş²æËÑË÷Ê÷¡¢ÓĞĞò¶ş²æÊ÷£¨Ó¢Óï£ºordered binary tree£©£¬
-//ÅÅĞò¶ş²æÊ÷£¨Ó¢Óï£ºsorted binary tree£©£¬ÊÇÖ¸Ò»¿Ã¿ÕÊ÷»òÕß¾ßÓĞÏÂÁĞĞÔÖÊµÄ¶ş²æÊ÷£º
-//		1.ÈôÈÎÒâ½ÚµãµÄ×ó×ÓÊ÷²»¿Õ£¬Ôò×ó×ÓÊ÷ÉÏËùÓĞ½áµãµÄÖµ¾ùĞ¡ÓÚËüµÄ¸ù½áµãµÄÖµ£»
-//		2.ÈôÈÎÒâ½ÚµãµÄÓÒ×ÓÊ÷²»¿Õ£¬ÔòÓÒ×ÓÊ÷ÉÏËùÓĞ½áµãµÄÖµ¾ù´óÓÚËüµÄ¸ù½áµãµÄÖµ£»
-//		3.ÈÎÒâ½ÚµãµÄ×ó¡¢ÓÒ×ÓÊ÷Ò²·Ö±ğÎª¶ş²æ²éÕÒÊ÷£»
-//		4.Ã»ÓĞ¼üÖµÏàµÈµÄ½Úµã¡£
+//äºŒå‰æŸ¥æ‰¾æ ‘ï¼ˆè‹±è¯­ï¼šBinary Search Treeï¼‰ï¼Œä¹Ÿç§°äºŒå‰æœç´¢æ ‘ã€æœ‰åºäºŒå‰æ ‘ï¼ˆè‹±è¯­ï¼šordered binary treeï¼‰ï¼Œ
+//æ’åºäºŒå‰æ ‘ï¼ˆè‹±è¯­ï¼šsorted binary treeï¼‰ï¼Œæ˜¯æŒ‡ä¸€æ£µç©ºæ ‘æˆ–è€…å…·æœ‰ä¸‹åˆ—æ€§è´¨çš„äºŒå‰æ ‘ï¼š
+//		1.è‹¥ä»»æ„èŠ‚ç‚¹çš„å·¦å­æ ‘ä¸ç©ºï¼Œåˆ™å·¦å­æ ‘ä¸Šæ‰€æœ‰ç»“ç‚¹çš„å€¼å‡å°äºå®ƒçš„æ ¹ç»“ç‚¹çš„å€¼ï¼›
+//		2.è‹¥ä»»æ„èŠ‚ç‚¹çš„å³å­æ ‘ä¸ç©ºï¼Œåˆ™å³å­æ ‘ä¸Šæ‰€æœ‰ç»“ç‚¹çš„å€¼å‡å¤§äºå®ƒçš„æ ¹ç»“ç‚¹çš„å€¼ï¼›
+//		3.ä»»æ„èŠ‚ç‚¹çš„å·¦ã€å³å­æ ‘ä¹Ÿåˆ†åˆ«ä¸ºäºŒå‰æŸ¥æ‰¾æ ‘ï¼›
+//		4.æ²¡æœ‰é”®å€¼ç›¸ç­‰çš„èŠ‚ç‚¹ã€‚
 
 static int inOrderDepth(BST *tree, node *nd, int sp);
 static int preOrderDepth(BST *tree, node *nd, int sp);
@@ -30,7 +30,7 @@ int insert(BST *tree, void *val)
 	
 	if (!tree->root)
 	{
-		// ´´½¨¸ù½Úµã
+		// åˆ›å»ºæ ¹èŠ‚ç‚¹
 		nd->parent = NULL;
 		nd->left = NULL;
 		nd->right = NULL;
@@ -87,7 +87,7 @@ int del(BST *tree, void *val)
 		node *q, *s;
 		if (!nd->left && !nd->right)
 		{
-			// ¸Ã½ÚµãÎªÒ¶×Ó½Úµã
+			// è¯¥èŠ‚ç‚¹ä¸ºå¶å­èŠ‚ç‚¹
 			if (nd->parent)
 			{
 				if (nd->parent->left == nd)
@@ -104,7 +104,7 @@ int del(BST *tree, void *val)
 		}
 		else if (!nd->right)
 		{
-			// ×ó×ÓÊ÷²»Îª¿Õ
+			// å·¦å­æ ‘ä¸ä¸ºç©º
 			q = nd->left;
 			nd->data = q->data;
 			nd->left = q->left;
@@ -122,7 +122,7 @@ int del(BST *tree, void *val)
 		}
 		else if (!nd->left)
 		{
-			// ÓÒ×ÓÊ÷²»Îª¿Õ
+			// å³å­æ ‘ä¸ä¸ºç©º
 			q = nd->right;
 			nd->data = q->data;
 			nd->left = q->left;
@@ -138,7 +138,7 @@ int del(BST *tree, void *val)
 		}
 		else
 		{
-			// ×óÓÒ×ÓÊ÷¶¼²»Îª¿Õ
+			// å·¦å³å­æ ‘éƒ½ä¸ä¸ºç©º
 			s = nd;
 			q = nd->left;
 			while (q->right)
@@ -217,17 +217,17 @@ int inOrderDepth(BST *tree, node *nd, int sp)
 		return -1;
 	}
 
-	//±éÀú×ó×ÓÊ÷
+	//éå†å·¦å­æ ‘
 	inOrderDepth(tree, nd->left, sp + 1);
 	
-	//´òÓ¡¸ù½Úµã
+	//æ‰“å°æ ¹èŠ‚ç‚¹
 	for (i ; i < sp; i++)
 	{
 		printf("----");
 	}	
 	(*tree->prt)(nd->data);
 	
-	//±éÀúÓÒ×ÓÊ÷
+	//éå†å³å­æ ‘
 	inOrderDepth(tree, nd->right, sp + 1);
 
 	return 0;
@@ -241,17 +241,17 @@ int preOrderDepth(BST *tree, node *nd, int sp)
 		return -1;
 	}
 
-	//´òÓ¡¸ù½Úµã
+	//æ‰“å°æ ¹èŠ‚ç‚¹
 	for (i; i < sp; i++)
 	{
 		printf("----");
 	}
 	(*tree->prt)(nd->data);
 
-	//±éÀú×ó×ÓÊ÷
+	//éå†å·¦å­æ ‘
 	preOrderDepth(tree, nd->left, sp + 1);
 
-	//±éÀúÓÒ×ÓÊ÷
+	//éå†å³å­æ ‘
 	preOrderDepth(tree, nd->right, sp + 1);
 
 	return 0;
@@ -265,13 +265,13 @@ int postOrderDepth(BST *tree, node *nd, int sp)
 		return -1;
 	}
 
-	//±éÀú×ó×ÓÊ÷
+	//éå†å·¦å­æ ‘
 	postOrderDepth(tree, nd->left, sp + 1);
 
-	//±éÀúÓÒ×ÓÊ÷
+	//éå†å³å­æ ‘
 	postOrderDepth(tree, nd->right, sp + 1);
 
-	//´òÓ¡¸ù½Úµã
+	//æ‰“å°æ ¹èŠ‚ç‚¹
 	for (i; i < sp; i++)
 	{
 		printf("----");

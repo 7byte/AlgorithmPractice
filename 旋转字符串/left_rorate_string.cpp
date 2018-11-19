@@ -2,10 +2,10 @@
 
 using namespace std;
 
-// ¸ø¶¨Ò»¸ö×Ö·û´®£¬ÒªÇó°Ñ×Ö·û´®Ç°ÃæµÄÈô¸É¸ö×Ö·ûÒÆ¶¯µ½×Ö·û´®µÄÎ²²¿£¬Èç°Ñ×Ö·û´®
-// ¡°abcdef¡±Ç°ÃæµÄ2¸ö×Ö·û¡®a¡¯ºÍ¡®b¡¯ÒÆ¶¯µ½×Ö·û´®µÄÎ²²¿£¬Ê¹µÃÔ­×Ö·û´®±ä³É×Ö·û
-// ´®¡°cdefab¡±¡£ÇëÐ´Ò»¸öº¯ÊýÍê³É´Ë¹¦ÄÜ£¬ÒªÇó¶Ô³¤¶ÈÎªnµÄ×Ö·û´®²Ù×÷µÄÊ±¼ä¸´ÔÓ¶È
-// ÎªO£¨n£©£¬¿Õ¼ä¸´ÔÓ¶ÈÎªO£¨1£©¡£
+// ç»™å®šä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œè¦æ±‚æŠŠå­—ç¬¦ä¸²å‰é¢çš„è‹¥å¹²ä¸ªå­—ç¬¦ç§»åŠ¨åˆ°å­—ç¬¦ä¸²çš„å°¾éƒ¨ï¼Œå¦‚æŠŠå­—ç¬¦ä¸²
+// â€œabcdefâ€å‰é¢çš„2ä¸ªå­—ç¬¦â€˜aâ€™å’Œâ€˜bâ€™ç§»åŠ¨åˆ°å­—ç¬¦ä¸²çš„å°¾éƒ¨ï¼Œä½¿å¾—åŽŸå­—ç¬¦ä¸²å˜æˆå­—ç¬¦
+// ä¸²â€œcdefabâ€ã€‚è¯·å†™ä¸€ä¸ªå‡½æ•°å®Œæˆæ­¤åŠŸèƒ½ï¼Œè¦æ±‚å¯¹é•¿åº¦ä¸ºnçš„å­—ç¬¦ä¸²æ“ä½œçš„æ—¶é—´å¤æ‚åº¦
+// ä¸ºOï¼ˆnï¼‰ï¼Œç©ºé—´å¤æ‚åº¦ä¸ºOï¼ˆ1ï¼‰ã€‚
 void reverse_string(char *a, unsigned from, unsigned to)
 {
 	while (from < to)
@@ -26,9 +26,9 @@ void left_rotate_string(char *a, unsigned num, unsigned m)
 	reverse_string(a, 0, num - 1);
 }
 
-// Á´±í·­×ª¡£¸ø³öÒ»¸öÁ´±íºÍÒ»¸öÊýk£¬±ÈÈç£¬Á´±íÎª1¡ú2¡ú3¡ú4¡ú5¡ú6£¬k = 2£¬Ôò·­
-// ×ªºó2¡ú1¡ú6¡ú5¡ú4¡ú3£¬Èôk = 3£¬·­×ªºó3¡ú2¡ú1¡ú6¡ú5¡ú4£¬Èôk = 4£¬·­×ªºó
-// 4¡ú3¡ú2¡ú1¡ú6¡ú5£¬ÓÃ³ÌÐòÊµÏÖ
+// é“¾è¡¨ç¿»è½¬ã€‚ç»™å‡ºä¸€ä¸ªé“¾è¡¨å’Œä¸€ä¸ªæ•°kï¼Œæ¯”å¦‚ï¼Œé“¾è¡¨ä¸º1â†’2â†’3â†’4â†’5â†’6ï¼Œk = 2ï¼Œåˆ™ç¿»
+// è½¬åŽ2â†’1â†’6â†’5â†’4â†’3ï¼Œè‹¥k = 3ï¼Œç¿»è½¬åŽ3â†’2â†’1â†’6â†’5â†’4ï¼Œè‹¥k = 4ï¼Œç¿»è½¬åŽ
+// 4â†’3â†’2â†’1â†’6â†’5ï¼Œç”¨ç¨‹åºå®žçŽ°
 struct ListNode
 {
 	int val;
@@ -96,9 +96,9 @@ void destoryList(ListNode *head)
 	}
 }
 
-// µ¥´Ê·­×ª¡£ÊäÈëÒ»¸öÓ¢ÎÄ¾ä×Ó£¬·­×ª¾ä×ÓÖÐµ¥´ÊµÄË³Ðò£¬µ«µ¥´ÊÄÚ×Ö·ûµÄË³Ðò²»±ä£¬
-// ¾ä×ÓÖÐµ¥´ÊÒÔ¿Õ¸ñ·û¸ô¿ª¡£Îª¼òµ¥Æð¼û£¬±êµã·ûºÅºÍÆÕÍ¨×ÖÄ¸Ò»Ñù´¦Àí¡£ÀýÈç£¬ÊäÈë
-// ¡°I am a student.¡±£¬ÔòÊä³ö¡°student.a am I¡±¡£
+// å•è¯ç¿»è½¬ã€‚è¾“å…¥ä¸€ä¸ªè‹±æ–‡å¥å­ï¼Œç¿»è½¬å¥å­ä¸­å•è¯çš„é¡ºåºï¼Œä½†å•è¯å†…å­—ç¬¦çš„é¡ºåºä¸å˜ï¼Œ
+// å¥å­ä¸­å•è¯ä»¥ç©ºæ ¼ç¬¦éš”å¼€ã€‚ä¸ºç®€å•èµ·è§ï¼Œæ ‡ç‚¹ç¬¦å·å’Œæ™®é€šå­—æ¯ä¸€æ ·å¤„ç†ã€‚ä¾‹å¦‚ï¼Œè¾“å…¥
+// â€œI am a student.â€ï¼Œåˆ™è¾“å‡ºâ€œstudent.a am Iâ€ã€‚
 void reverse_words(char *a, unsigned num)
 {
 	int i = 0, left = -1, right = -1;
@@ -130,7 +130,7 @@ void reverse_words(char *a, unsigned num)
 
 int main()
 {
-	/*Ðý×ª×Ö·û´®*/
+	/*æ—‹è½¬å­—ç¬¦ä¸²*/
 #if 0
 	char str[10] = { 0 };
 	scanf_s("%s", str, 10);
@@ -138,7 +138,7 @@ int main()
 	printf(str);
 #endif
 
-	/*·´×ªÁ´±í*/
+	/*åè½¬é“¾è¡¨*/
 #if 0
 	ListNode *head, *second, *third, *fourth, *fifth;
 	head = new ListNode;
@@ -161,9 +161,9 @@ int main()
 	destoryList(head);
 #endif
 
-	/*µ¥´Ê·­×ª*/
+	/*å•è¯ç¿»è½¬*/
 	char str[20] = { 0 };
-	strcpy_s(str, "I am a student.");
+	strcpy(str, "I am a student.");
 	reverse_words(str, strlen(str));
 	printf(str);
 

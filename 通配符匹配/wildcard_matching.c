@@ -9,13 +9,13 @@
 //bool isMatch(const char *s, const char *p)
 //
 //Some examples :
-//isMatch("aa", "a") ¡ú false
-//isMatch("aa", "aa") ¡ú true
-//isMatch("aaa", "aa") ¡ú false
-//isMatch("aa", "*") ¡ú true
-//isMatch("aa", "a*") ¡ú true
-//isMatch("ab", "?*") ¡ú true
-//isMatch("aab", "c*a*b") ¡ú false
+//isMatch("aa", "a") â†’ false
+//isMatch("aa", "aa") â†’ true
+//isMatch("aaa", "aa") â†’ false
+//isMatch("aa", "*") â†’ true
+//isMatch("aa", "a*") â†’ true
+//isMatch("ab", "?*") â†’ true
+//isMatch("aab", "c*a*b") â†’ false
 
 #include<stdio.h>
 #include<memory.h>

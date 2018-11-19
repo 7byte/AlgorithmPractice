@@ -1,4 +1,4 @@
-/*¸ø¶¨Ò»¸ö×Ö·û´®£¬ÇóËüµÄ×î³¤»ØÎÄ×Ó´®µÄ³¤¶È¡£*/
+/*ç»™å®šä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œæ±‚å®ƒçš„æœ€é•¿å›æ–‡å­ä¸²çš„é•¿åº¦ã€‚*/
 
 #include <stdio.h>
 
@@ -10,7 +10,7 @@ int LongestPalindrome(const char *s, int n)
 	for (i = 0; i < n; i++)
 	{
 		int left = i - 1, right = i + 1, len = 1;
-		while (left >= 0 && right < n) //Èç¹û»ØÎÄ×Ö·û´®µÄ³¤¶ÈÊÇÆæÊı
+		while (left >= 0 && right < n) //å¦‚æœå›æ–‡å­—ç¬¦ä¸²çš„é•¿åº¦æ˜¯å¥‡æ•°
 		{
 			if (s[left--] != s[right++])
 				break;
@@ -19,7 +19,7 @@ int LongestPalindrome(const char *s, int n)
 		max_len = max_len > len ? max_len : len;
 
 		left = i, right = i + 1, len = 0;
-		while (left >= 0 && right < n) //Èç¹û»ØÎÄ×Ö·û´®µÄ³¤¶ÈÊÇÅ¼Êı
+		while (left >= 0 && right < n) //å¦‚æœå›æ–‡å­—ç¬¦ä¸²çš„é•¿åº¦æ˜¯å¶æ•°
 		{
 			if (s[left--] != s[right++])
 				break;
