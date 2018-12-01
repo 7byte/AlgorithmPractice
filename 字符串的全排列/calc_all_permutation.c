@@ -7,10 +7,10 @@
 
 void calc_all_permutation(char* s, int from, int to)
 {
-	if (to <= 1)
-	{
-		return;
-	}
+	// if (to <= 1)
+	// {
+	// 	return;
+	// }
 
 	if (from == to)
 	{
@@ -34,7 +34,7 @@ void calc_all_permutation(char* s, int from, int to)
 
 int main()
 {
-	char s[] = "abcd";
+	char s[] = "a";
 	calc_all_permutation(s, 0, strlen(s) - 1);
 	return 0;
 }
