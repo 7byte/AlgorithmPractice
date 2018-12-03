@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<time.h>
 
 // 自顶向下
 int fiboFromTop(int n)
@@ -75,14 +76,19 @@ int main()
 {
     int i, count = 20;
 
+    clock_t t1 = clock();
+    
     for (i = 1; i <= count; i++) printf("%d  ", fiboFromTop(i));
-    printf("\n");
+    clock_t t2 = clock();
+    printf("\ncost time: %fs\n", difftime(t2, t1)/CLOCKS_PER_SEC);
 
     for (i = 1; i <= count; i++) printf("%d  ", fiboFromBottom(i));
-    printf("\n");
+    clock_t t3 = clock();
+    printf("\ncost time: %fs\n", difftime(t3, t2)/CLOCKS_PER_SEC);
 
     for (i = 1; i <= count; i++) printf("%d  ", fiboMatrix(i));
-    printf("\n");
+    clock_t t4 = clock();
+    printf("\ncost time: %fs\n", difftime(t4, t3)/CLOCKS_PER_SEC);
     
     return 0;
 }
