@@ -1,20 +1,36 @@
 #include<stdio.h>
+#include<time.h>
 
-int power(int x, unsigned n)
+typedef int (*Power)(int, unsigned);
+
+int power_recursive(int x, unsigned n)
 {
     int p;
     if(n == 0) return 1;
     if(n == 1) return x;
     if((n&1) == 0)
     {
-        p = power(x, n/2);
+        p = power_recursive(x, n/2);
         return p*p;
     }
-    p = power(x, (n-1)/2);
+    p = power_recursive(x, (n-1)/2);
     return p*p*x;
 }
 
-float powx(int x, int n)
+int power_not_recursive(int x, unsigned n)
+{
+    int k = 1;
+    if(n == 0) return 1;
+    while (n > 1)
+    {
+        if ((n&1) == 1) k *= x;
+        x *= x;
+        n >>= 1;
+    }
+    return k * x;
+}
+
+double powx(int x, int n, Power power)
 {
     if(n < 0)
     {
@@ -23,13 +39,40 @@ float powx(int x, int n)
     return power(x, n);
 }
 
+typedef struct testcase
+{
+    int x;
+    int n;
+    double expect;
+}testcase;
+
+testcase cases[] = 
+{
+    {5, -13, 0.0000000008192},
+    {5, -5, 0.00032},
+    {5, -1, 0.2},
+    {5, 0, 1},
+    {5, 1, 5},
+    {5, 5, 3125},
+    {5, 13, 1220703125}
+};
+
+void test(Power power)
+{
+    int i = 0;
+    clock_t t1 = clock();
+    for(i; i < sizeof(cases)/sizeof(testcase); i++)
+    {
+        testcase c = cases[i];
+        printf("powx(%d, %d) expect %g, got %g\n", c.x, c.n, c.expect, powx(c.x, c.n, power));
+    }
+    clock_t t2 = clock();
+    printf("cost time: %fs\n\n", difftime(t2, t1)/CLOCKS_PER_SEC);
+}
+
 int main()
 {
-    printf("powx(5, -1) expect 0.2, got %f\n", powx(5, -1));
-    printf("powx(5, -4) expect 0.0016, got %f\n", powx(5, -4));
-    printf("powx(5, -5) expect 0.00032, got %f\n", powx(5, -5));
-    printf("powx(5, 0) expect 1, got %f\n", powx(5, 0));
-    printf("powx(5, 4) expect 625, got %f\n", powx(5, 4));
-    printf("powx(5, 5) expect 3125, got %f\n", powx(5, 5));
+    test(power_recursive);
+    test(power_not_recursive);
     return 0;
 }
